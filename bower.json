@@ -1,0 +1,31 @@
+{
+  "name": "cedrus-ui-demo",
+  "description": "Cedrus UI Demo Application",
+  "private": true,
+  "authors": [
+    "Mohamed Maher <moh.maher@gmail.com>"
+  ],
+  "license": "ISC",
+  "keywords": [
+    "cedrus",
+    "ui",
+    "demo",
+    "cedrus-ui"
+  ],
+  "homepage": "https://github.com/Cedrusco/cedrus-ui-demo",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.5.9",
+    "angular-material": "^1.0.9",
+    "cedrus-ui": "^0.2.17",
+    "d3": "^4.2.6",
+    "font-awesome": "^4.7.0",
+    "angular-ui-router": "^0.3.2"
+  }
+}

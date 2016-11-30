@@ -1,0 +1,10 @@
+.section-title {
+    font-size: 120%;
+    font-weight: bolder;
+    color: darkred;
+    padding: 8px 0px 0;
+}
+
+.output {
+    color: darkorange;
+}

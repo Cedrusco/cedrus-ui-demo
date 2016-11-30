@@ -1,0 +1,22 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "module": "commonjs",
+    "target": "ES5",
+    "sourceMap": true,
+    "noImplicitAny": false,
+    "removeComments": false,
+    "listFiles": false,
+    "declaration": false,
+    "noResolve": false
+  },
+  "exclude": [
+    "node_modules",
+    "bower_components",
+    "typings",
+    "dist",
+    "*.d.ts",
+    "_*",
+    ".*"
+  ]
+}

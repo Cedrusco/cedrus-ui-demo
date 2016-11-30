@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Cedrus-UI Demo Application</title>
+    <script src="lib/angular/angular.min.js"></script>
+    <script src="lib/angular-ui-router/release/angular-ui-router.min.js"></script>
+    <script src="lib/angular-aria/angular-aria.min.js"></script>
+    <script src="lib/angular-material/angular-material.min.js"></script>
+    <script src="lib/angular-animate/angular-animate.min.js"></script>
+    <script src="lib/angular-aria/angular-aria.min.js"></script>
+    <script src="lib/cedrus-ui/js/cedrus-ui.js"></script>
+    <script src="lib/d3/d3.min.js"></script>
+    <script src="lib/d3-tip/index.js"></script>
+    <script src="main.js"></script>
+    <link rel="stylesheet" href="lib/angular-material/angular-material.min.css">
+    <link rel="stylesheet" href="lib/cedrus-ui/css/cedrus-ui.css">
+    <link rel="stylesheet" href="lib/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body ng-app="testApp" layout-padding ng-controller="TestController as vm">
+    <div>
+        <!-- cd-constnat -->
+        <div layout="column">
+            <div class="section-title">Test cd-constant</div>
+            Get quick access to constants or services properties using cd-constant directive:
+            <ul>
+                <li>
+                    First Level property access using an Element directive
+                    <cd-constant name="testConstants" key="firstLevel" class="output"></cd-constant>
+                </li>
+                <li>Second Level property access as an Element directive
+                    <cd-constant name="testConstants" key="obj.key" class="output"></cd-constant>
+                </li>
+                <li>
+                    Second Level property access as an Attribute directive
+                    <span cd-constant="testConstants" key="obj.key" replace="false" class="output"></span>
+                </li>
+            </ul>
+        </div>
+        <!-- cd-calendar -->
+        <div layout="column">
+            <div class="section-title">Test cd-calendar</div>
+            <ul>
+                <li>
+                    <p>Selected Date: <span class="output">{{vm.date}}</span></p>
+                    <cd-calendar ng-model="vm.date" options="{ blockFreeTyping : true }"></cd-calendar>
+                </li>
+            </ul>
+        </div>
+        <!-- core filters -->
+        <div layout="column">
+            <div class="section-title">Test Filters</div>
+            <ul>
+                <li>Capitalize Filter: { {{vm.words}} | capitalize}) is <span class="output">({{vm.words | capitalize}})</span></li>
+                <li>Normalize Camel Case: { {{vm.words}} | normalizeCamelCase} is <span class="output">({{vm.words | normalizeCamelCase}} )</span></li>
+            </ul>
+        </div>
+
+        <!-- cd-chart -->
+        <div layout="column">
+            <div class="section-title">Test cd-calendar</div>
+            <div layout="row">
+                <md-button ng-click="vm.changeData()">change Data</md-button>
+                <md-button ng-click="vm.hideLegend()">hide legend</md-button>
+                <md-button ng-click="vm.toggleSeries()">toggle series</md-button>
+            </div>
+            <!--<cd-chart data="vm.pieData" options="vm.cdChartOptions"></cd-chart>-->
+            <cd-chart data="vm.chartData" options="vm.cdChartOptions"></cd-chart>
+            <!--<cd-chart data="vm.chartData" options="vm.cdChartOptions3"></cd-chart>-->
+        </div>
+    </div>
+
+</body>
+
+<script type="text/ng-template" id="testTemplate.html">
+    <div layout="column" layout-align="center none">
+        <div layout="column" layout-align="space-between none">
+            <div ng-repeat="(field, displayText ) in vm.options.subFields">
+                <p class="bold-text">{{displayText}} is {{el[field]}}</p>
+            </div>
+        </div>
+    </div>
+</script>
+
+</html>
