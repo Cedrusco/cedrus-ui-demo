@@ -1,8 +1,27 @@
 # cedrus-ui-demo
-Demo App for using the Cedrus-UI application
+Demonstration application for using the Cedrus-UI components
 
+---
 ## Installation
-- Use "npm install" to install all pre-requisites (npm, bower, and typings)
-- Use gulp to run the build & watch task
+```bash
+# Install all pre-requisites (npm, bower, and typings)
+npm install
+# Run the build process at least one time for compiling client typescripts
+gulp build
+```
+---
+## For Development
+```bash
+# The default gulp builds typescripts and watch for changes
+gulp
+```
+---
+## Runing the Demo
+
+```bash
+# Start the server on port 3000 using nodemon
+npm start
+```
+
 
 
